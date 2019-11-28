@@ -1,0 +1,21 @@
+.wrap{
+    padding-left: 20px;
+}
+.title{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.category{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: grey;
+}
+.text{
+    font-size: 14px;
+    color: rgba(0, 0, 0, .7);
+    margin-bottom: 20px;
+}
+.date{
+    font-size: 13px;
+    color: #ccc;
+}

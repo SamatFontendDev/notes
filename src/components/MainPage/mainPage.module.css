@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    padding: 20px 10px;
+}
+.colLeft{
+    width: 30%;
+}
+.colRight{
+    width: 70%;
+}
