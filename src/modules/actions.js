@@ -53,9 +53,11 @@ export const changeNote = item => {
     }
 }
 
-export const hideNote = val => {
+export const hideNote = el => {
+    console.log(el);
+    
     return{
         type: 'HIDE_NOTE',
-        payload: val
+        payload: el
     }
 }

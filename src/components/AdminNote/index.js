@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {deleteNote} from '../../modules/actions';
+import {deleteNote, hideNote} from '../../modules/actions';
 import css from './adminNote.module.css';
 import ChangeNote from '../ChangeNote';
 
@@ -23,6 +23,19 @@ class AdminNote extends React.Component{
         deleteNote(date);
     }
 
+    onHideNote = () => {
+        const {title, category, date, text, show, hideNote} = this.props;
+        let el = {
+           title,
+            category,
+            date,
+            text,
+            show: !show
+        }
+
+        hideNote(el);
+    }
+
    render() {
         const {title, category, date, text, show} = this.props;
         const {edit} = this.state;
@@ -41,6 +54,10 @@ class AdminNote extends React.Component{
                     <button 
                     onClick={this.onDeleteNote}
                     className={css.button}>Удалить</button>
+                    <button
+                    className={css.button}
+                    onClick={this.onHideNote}
+                    >{show ? 'Скрыть' : 'Показать'}</button>
                 </div>
             </div>
             <ChangeNote 
@@ -58,6 +75,9 @@ const mapDispatchToProps = dispatch => {
     return{
         deleteNote: id => {
             dispatch(deleteNote(id));
+        },
+        hideNote: el => {
+            dispatch(hideNote(el));
         }
     }
 }

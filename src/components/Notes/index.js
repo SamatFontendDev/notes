@@ -28,16 +28,21 @@ class Notes extends React.Component{
                 <div className={css.title}>Записи:</div>
                 <ul>
                     {filteredNotes.map((elem, index) => {
-                            return(
-                                <Link to={`/${elem.date}`}>
-                                    <li className={css.item} key={index}>
-                                        <div>{elem.title}</div>
-                                        <div>{elem.category}</div>
-                                        <div>{elem.text}</div>
-                                        <div>{elem.date}</div>
-                                    </li>
-                                </Link>
-                            )
+                            if (elem.show) {
+                                return(
+                                    <Link to={`/${elem.date}`}>
+                                        <li className={css.item} key={index}>
+                                            <div>{elem.title}</div>
+                                            <div>{elem.category}</div>
+                                            <div>{elem.text}</div>
+                                            <div>{elem.date}</div>
+                                        </li>
+                                    </Link>
+                                )
+                            } else {
+                                return null;
+                            }
+                            
                     })}
                 </ul>
             </div>
