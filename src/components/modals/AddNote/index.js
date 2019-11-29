@@ -8,7 +8,8 @@ class AddNote extends React.Component{
         title: '',
         text: '',
         category: '',
-        date: ''
+        date: '',
+        show: true
     }
 
     handleField = e => {

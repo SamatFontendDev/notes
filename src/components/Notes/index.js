@@ -15,7 +15,7 @@ class Notes extends React.Component{
             filteredNotes = filteredNotes.filter((elem) => elem.category === id);
         }
 
-        if(!filteredNotes.length) {
+        if(!filteredNotes.length && notes.length) {
             return <NoteDetail 
             title={detail[0].title} 
             text={detail[0].text} 
